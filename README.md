@@ -37,4 +37,4 @@ Problema:
 
 •	Uma string de entrada "NLS3X" irá resultar em uma posição final "(1, 1)" pois a string pode ser simplificada para "NL".
 
-•	Caso a string de entrada seja inválida ou tenha algum outro problema, o resultado deve ser "(999, 999)".
+•	Caso a string de entrada seja inválida ou tenha algum outro problema, o resultado deve ser "(999, 999)". 
