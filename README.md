@@ -3,7 +3,7 @@ Instruções:
 •   	Utilizar qualquer IDE de preferência (Eclipse, Intellij, etc)   
 •	    Para envio da avaliação criar branch no seguinte formato test/seunomecompleto  
 •   	Usar classe test para validação dos resultados  
-•   	Será avaliado limpeza de código e identação, tais como lógica para resolução dos problemas e utilização de recursos java 
+•   	Será avaliado limpeza de código e identação, tais como lógica para resolução dos problemas e utilização de recursos java               
 •	    Comentar o código explicando o que for relevante para a solução do problema.
 
 Problema:
