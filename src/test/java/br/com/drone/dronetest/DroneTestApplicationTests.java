@@ -4,7 +4,7 @@ package br.com.drone.dronetest;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class DroneTesteApplicationTests {
+class DroneTestApplicationTests {
     private Drone drone = new Drone();
     @Test
     public void Input_NNNNNLLLLL() {
