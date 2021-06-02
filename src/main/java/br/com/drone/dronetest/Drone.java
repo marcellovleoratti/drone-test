@@ -11,6 +11,7 @@ public  class Drone {
     }
 
 
+    // Function to validate the input string
     public boolean validInput(String str){
         if (str == null) return false;
         final String[] invalidChar = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "M", "P", "Q", "R", "T", "U", "V", "W", "Y", "Z"};
@@ -29,13 +30,13 @@ public  class Drone {
         }
         return true;
     }
-
+    //function used to clean and simplify input, removing while resolving all 'X's
     public String simplifyInput(String str){
 
         int num = str.length();
         for(int i = 0; i < num; i++){
-            if(str.charAt(i) == 'X'){
-                if((str.charAt(i-1)-48)>=0 && (str.charAt(i-1)-48)<=9){
+            if(str.charAt(i) == 'X'){ //if there is an X character
+                if((str.charAt(i-1)-48)>=0 && (str.charAt(i-1)-48)<=9){ //if there is a compound step before said X (compound = letter + number)
                     str = str.substring(0, i-1) + str.substring(i);
                     num = str.length();
                     i = 0;
@@ -59,7 +60,7 @@ public  class Drone {
         for (int i = 0; i < num; i++){
             try {
                 if (i == num - 1 || str.charAt(i + 1) < 48 || str.charAt(i + 1) > 57) { //not a number after letter
-                    switch (str.charAt(i)) {
+                    switch (str.charAt(i)) { //switch to move the drone one unit
                         case 'N':
                             posicao.goNorth();
                             break;
@@ -81,7 +82,7 @@ public  class Drone {
                         number += str.charAt(i);
                         i++;
                     }
-                    switch (c) {
+                    switch (c) { //switch to move the drone N steps
                         case 'N':
                             posicao.goNorth(Integer.parseInt(number));
                             break;
@@ -97,7 +98,7 @@ public  class Drone {
                     }
                     i--;
                 }
-            }catch (ArithmeticException e){
+            }catch (ArithmeticException e){ // catching int overflow
                 posicao.setY(999);
                 posicao.setX(999);
             }
