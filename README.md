@@ -1,40 +1,48 @@
-Instruções:
+Entrega: Criar uma branch test/seunome e subir versão
 
-•   	Utilizar qualquer IDE de preferência (Eclipse, Intellij, etc)   
-•	    Para envio da avaliação criar branch no seguinte formato test/seunomecompleto  
-•   	Usar classe test para validação dos resultados  
-•   	Será avaliado limpeza de código e identação, tais como lógica para resolução dos problemas e utilização de recursos java               
-•	    Comentar o código explicando o que for relevante para a solução do problema.
+Descrição:
 
-Problema:
+Criar um sistema de análise de dados de venda que irá importar lotes de arquivos e produzir
+um relatório baseado em informações presentes no mesmo.
 
+Existem 3 tipos de dados dentro dos arquivos e eles podem ser distinguidos pelo seu
+identificador que estará presente na primeira coluna de cada linha, onde o separador de
+colunas é o caractere “ç”.
 
-•	Implementar um algoritmo para o controle de posição de um drone em um plano cartesiano (X, Y).
+Dados do vendedor
 
-•	O ponto inicial do drone é "(0, 0)" para cada execução do método changePosition ao ser executado cada teste unitário.
+Os dados do vendedor possuem o identificador 001 e seguem o seguinte formato:
+001çCPFçNameçSalary
 
-•	A string de entrada pode conter os seguintes caracteres N, S, L, e O representando Norte, Sul, Leste e Oeste, respectivamente.
+Dados do cliente
 
-•	Estes caracteres podem estar presentes aleatoriamente na string de entrada.
+Os dados do cliente possuem o identificador 002 e seguem o seguinte formato:
+002çCNPJçNameçBusiness 
+Area Dados de venda
+Os dados de venda possuem o identificador 003 e seguem o seguinte formato:
+003çSale IDç[Item ID-Item Quantity-Item Price]çSalesman name
 
-•	Uma string de entrada "NNNLLL" irá resultar em uma posição final "(3, 3)", assim como uma string "NLNLNL" irá resultar em "(3, 3)".
+Exemplo de conteúdo total do arquivo:
 
-•	Caso o caractere X esteja presente, o mesmo irá cancelar a operação anterior.
+001ç1234567891234çPedroç50000
+001ç3245678865434çPauloç40000.99
+002ç2345675434544345çJose da SilvaçRural
+002ç2345675433444345çEduardo PereiraçRural
+003ç10ç[1-10-100,2-30-2.50,3-40-3.10]çPedro
+003ç08ç[1-34-10,2-33-1.50,3-40-0.10]çPaulo
 
-•	Caso houver mais de um caractere X consecutivo, o mesmo cancelará mais de uma ação na quantidade em que o X estiver presente.
+O sistema deverá ler continuamente todos os arquivos dentro do diretório padrão
+HOMEPATH/data/in e colocar o arquivo de saída em HOMEPATH/data/out.
 
-•	Uma string de entrada "NNNXLLLXX" irá resultar em uma posição final "(1, 2)" pois a string poderia ser simplificada para "NNL".
+No arquivo de saída o sistema deverá possuir os seguintes dados:
+• Quantidade de clientes no arquivo de entrada
+• Quantidade de vendedores no arquivo de entrada
+• ID da venda mais cara
+• O pior vendedor
 
-•	Além disso, um número pode estar presente após o caractere da operação, representando o "passo" que a operação deve acumular.
+Requisitos técnicos
 
-•	Este número deve estar compreendido entre 1 e 2147483647.
-
-•	Deve-se observar que a operação 'X' não suporta opção de "passo" e deve ser considerado inválido.
-
-•	Uma string de entrada "NNX2" deve ser considerada inválida.
-
-•	Uma string de entrada "N123LSX" irá resultar em uma posição final "(1, 123)", pois a string pode ser simplificada para "N123L".
-
-•	Uma string de entrada "NLS3X" irá resultar em uma posição final "(1, 1)" pois a string pode ser simplificada para "NL".
-
-•	Caso a string de entrada seja inválida ou tenha algum outro problema, o resultado deve ser "(999, 999)". 
+• O sistema deve rodar continuamente e capturar novos arquivos assim que eles sejam 
+inseridos no diretório padrão.
+• Você tem total liberdade para escolher qualquer biblioteca externa se achar
+necessário.
