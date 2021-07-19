@@ -2,16 +2,18 @@ package aplications;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Scanner;
 
 public class Drone_Test3 {
 
 	public static void main(String[] args) {
 		//ENTRADA
-		String coordenada = "lllnnnooo";
+		Scanner sc = new Scanner(System.in);
+		String coordenada = sc.nextLine();
 		filtrarInicial(coordenada);
 		char[] listchar = divisorCaracter(coordenada);
 				
-		//VARS UTEIS
+		//VARIAVEIS UTEIS
 		String multCoordChar = "";
 		long multCoordLong = 0;
 		String redutorXchar = "";
